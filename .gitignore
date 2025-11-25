@@ -1,6 +1,7 @@
 # Build directories
 build/
 cmake-build-*/
+.cache/
 
 # CMake
 CMakeCache.txt
@@ -8,6 +9,7 @@ CMakeFiles/
 cmake_install.cmake
 Makefile
 *.cmake
+compile_commands.json
 
 # Compiled binaries
 *.out
@@ -32,6 +34,10 @@ pso_tests
 *.swp
 *.swo
 *~
+.clangd
+
+# Personal notes
+nvim.md
 
 # OS files
 .DS_Store
