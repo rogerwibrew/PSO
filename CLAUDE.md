@@ -11,6 +11,7 @@ A command-line C++ application implementing Particle Swarm Optimization (PSO) al
 The project uses CMake for building and GoogleTest for testing. Build system is not yet configured.
 
 Once configured, typical commands will be:
+
 ```bash
 # Build the project
 cmake -B build -S .
@@ -42,6 +43,7 @@ The project uses a polymorphic architecture with two primary hierarchies:
 ### Test Functions
 
 Initial target functions from Wikipedia's optimization test functions:
+
 - **Unimodal**: Sphere, Rosenbrock
 - **Multimodal**: Rastrigin, Ackley, Griewank, Schwefel
 - See `docs/pso_mathematics_guide.md` sections 6.1-6.3 for mathematical definitions
@@ -52,18 +54,21 @@ Initial target functions from Wikipedia's optimization test functions:
 Based on the mathematical framework in the docs:
 
 **Particle representation**:
+
 - Position vector (current solution)
 - Velocity vector (rate of change)
 - Personal best position
 - Personal best fitness
 
 **Update equations**:
-```
+
+```text
 v(t+1) = w*v(t) + c1*r1*(pbest - x(t)) + c2*r2*(gbest - x(t))
 x(t+1) = x(t) + v(t+1)
 ```
 
 **Key implementation details**:
+
 - Velocity clamping to prevent explosion
 - Boundary handling strategies (absorbing, reflecting, periodic)
 - Topology variants (global best, local best, von Neumann)
@@ -78,6 +83,33 @@ See `docs/pso_reference.md` for implementation checklist and pseudocode.
 - Use C++ STL where appropriate
 - Follow modern C++ best practices
 - No specific style guide yet defined
+
+### Markdown Standards
+
+When creating or editing markdown files (*.md):
+
+1. **Code Blocks**: Always specify a language for fenced code blocks
+   - Use ` ```cpp ` for C++ code
+   - Use ` ```bash ` for shell commands
+   - Use ` ```text ` for pseudocode, mathematical formulas, or plain text
+   - Use ` ```cmake ` for CMake snippets
+   - Never use ` ``` ` without a language specifier
+
+2. **Headings**: Always surround headings with blank lines
+   - Add a blank line before each heading
+   - Add a blank line after each heading
+
+3. **Lists**: Surround lists with blank lines
+   - Add a blank line before the first list item
+   - Add a blank line after the last list item
+
+4. **No Time Estimates**: Never include time estimates or schedules in planning documents
+   - Focus on what needs to be done, not when
+   - Let users decide scheduling
+
+5. **Trailing Whitespace**: Avoid trailing spaces at the end of lines
+
+6. **Line Length**: Keep lines reasonably short (under 120 characters when possible) for better readability
 
 ## Implementation Strategy
 
@@ -100,10 +132,12 @@ When implementing PSO components:
 ## Mathematical Reference
 
 The `docs/` directory contains comprehensive mathematical foundations:
+
 - `pso_mathematics_guide.md`: Detailed mathematical theory, convergence analysis, variants
 - `pso_reference.md`: Quick implementation reference, pseudocode, test functions
 
 Refer to these documents when:
+
 - Implementing update equations
 - Choosing parameter values
 - Understanding algorithm variants
@@ -113,6 +147,7 @@ Refer to these documents when:
 ## Extension Plan
 
 After basic PSO implementation:
+
 1. Additional test functions (multimodal, fixed-dimension)
 2. PSO variants (CLPSO, APSO, QPSO)
 3. Different topology structures

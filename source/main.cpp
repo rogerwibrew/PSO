@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <tuple>
+#include "pso_types.h"
 
 int main(int argc, char* argv[]) {
     std::cout << "Particle Swarm Optimization (PSO) Application" << std::endl;
